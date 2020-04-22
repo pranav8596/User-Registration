@@ -18,6 +18,11 @@ namespace User_Registration_Main
                                             "[.]{1}[a-z]{2,4}" +
                                             "([.]{1}[a-z]{2,4})?$";
 
+        //Pattern for Mobile Number
+        public const String MOBILE_PATTERN = "^[0-9]{1,3}" +
+                                             "[ ]{1}" +
+                                             "[0-9]{10}$";
+
         //To validate User's Fisrt and Last name
         public Boolean validateName(String name)
         {
@@ -28,6 +33,12 @@ namespace User_Registration_Main
         public Boolean validateEmail(String eMail)
         {
             return Regex.IsMatch(eMail, EMAIL_PATTERN);
+        }
+
+        //To validate User's Mobile number
+        public Boolean validateMobileNumber(String mobNumber)
+        {
+            return Regex.IsMatch(mobNumber, MOBILE_PATTERN);
         }
     }
 }

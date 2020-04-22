@@ -75,5 +75,13 @@ namespace User_Registration_Test
             bool result = userValidator.validateEmail("pranav.ige96@gmail");
             Assert.IsFalse(result);
         }
+
+        [Test]
+        public void givenMobileNumber_WhenProper_ShouldReturnTrue()
+        {
+            bool result = userValidator.validateMobileNumber("91 9167249096");
+            Assert.IsTrue(result);
+        }
+
     }
 }
