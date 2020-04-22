@@ -85,10 +85,18 @@ namespace User_Registration_Test
         }
 
         [Test]
-        //Test should return False there is No Space
+        //Test should return False if there is No Space
         public void givenMobileNumber_WheNoSpace_ShouldReturnFalse()
         {
             bool result = userValidator.validateMobileNumber("919167249096");
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        //Test should return False if digits are Not 10
+        public void givenMobileNumber_WhenDigitsNotTen_ShouldReturnFalse()
+        {
+            bool result = userValidator.validateMobileNumber("91 916724");
             Assert.IsFalse(result);
         }
     }
