@@ -40,6 +40,11 @@ namespace User_Registration_Test
             Assert.IsFalse(result);
         }
 
-
+        [Test]
+        public void givenEmailAddress_WhenProper_ShouldReturnTrue()
+        {
+            bool result = userValidator.validateEmail("pranav.ige96@gmail.com");
+            Assert.IsTrue(result);
+        }
     }
 }
