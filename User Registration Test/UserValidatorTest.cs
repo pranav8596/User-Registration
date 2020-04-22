@@ -33,6 +33,13 @@ namespace User_Registration_Test
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void givenLastName_WhenImProper_ShouldReturnFalse()
+        {
+            bool result = userValidator.validateName("ige");
+            Assert.IsFalse(result);
+        }
+
 
     }
 }
