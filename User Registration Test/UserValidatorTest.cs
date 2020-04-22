@@ -77,11 +77,19 @@ namespace User_Registration_Test
         }
 
         [Test]
+        //Test should return True if Mobile Number is proper
         public void givenMobileNumber_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validateMobileNumber("91 9167249096");
             Assert.IsTrue(result);
         }
 
+        [Test]
+        //Test should return False there is No Space
+        public void givenMobileNumber_WheNoSpace_ShouldReturnFalse()
+        {
+            bool result = userValidator.validateMobileNumber("919167249096");
+            Assert.IsFalse(result);
+        }
     }
 }
