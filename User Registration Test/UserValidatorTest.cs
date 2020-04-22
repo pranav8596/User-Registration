@@ -67,5 +67,13 @@ namespace User_Registration_Test
             bool result = userValidator.validateEmail("pranav.ige96@.com");
             Assert.IsFalse(result);
         }
+
+        [Test]
+        //Test should return False if TLD is missing
+        public void givenEmailAddress_WhenNoTLD_ShouldReturnFalse()
+        {
+            bool result = userValidator.validateEmail("pranav.ige96@gmail");
+            Assert.IsFalse(result);
+        }
     }
 }
