@@ -59,5 +59,13 @@ namespace User_Registration_Test
             bool result = userValidator.validateEmail("pranav.ige96gmail.com");
             Assert.IsFalse(result);
         }
+
+        [Test]
+        //Test should return False if domain is missing
+        public void givenEmailAddress_WhenNoDomain_ShouldReturnFalse()
+        {
+            bool result = userValidator.validateEmail("pranav.ige96@.com");
+            Assert.IsFalse(result);
+        }
     }
 }
