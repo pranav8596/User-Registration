@@ -23,13 +23,14 @@ namespace User_Registration_Main
                                              "[ ]{1}" +
                                              "[0-9]{10}$";
 
-        //Pattern for Password Rule 1: Minimum 8 chracters
+        // Pattern for Password Rule 1: Minimum 8 chracters
         public String PASSWORD_PATTERN1 = "^[a-z]{8,}$";
 
-        //Pattern for Password Rule 2: At least 1 upper case
+        // Pattern for Password Rule 2: At least 1 upper case
         public String PASSWORD_PATTERN2 = "^(?=.*[A-Z]).[A-Za-z]{7,}$";
 
-
+        // Pattern for Password Rule 3: Atleast 1 numeric number
+        public String PASSWORD_PATTERN3 = "^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$";
 
         //To validate User's Fisrt and Last name
         public Boolean validateName(String name)

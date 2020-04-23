@@ -132,8 +132,6 @@ namespace User_Registration_Test
         {
             bool result = userValidator.validatePassword("pranavige", userValidator.PASSWORD_PATTERN2);
             Assert.IsFalse(result);
-        }
-
-
+        }       
     }
 }
