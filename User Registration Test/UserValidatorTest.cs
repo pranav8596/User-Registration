@@ -101,7 +101,7 @@ namespace User_Registration_Test
         }
 
         [Test]
-        // Rule 1: Minimum 8 characters
+        // RULE 1: Minimum 8 characters
         // Test should return True if Password Rule 1 is proper
         public void givenPasswordRule1_WhenProper_ShouldReturnTrue()
         {
@@ -118,7 +118,7 @@ namespace User_Registration_Test
         }
 
         [Test]
-        // Rule 2: Atleast one upper case
+        // RULE 2: Atleast one upper case
         // Test should return True if Password Rule 2 is proper
         public void givenPasswordRule2_WhenProper_ShouldReturnTrue()
         {
@@ -135,7 +135,7 @@ namespace User_Registration_Test
         }
 
         [Test]
-        // Rule 3: Atleast one Numeric number
+        // RULE 3: Atleast one Numeric number
         // Test should return True if Password Rule 3 is proper
         public void givenPasswordRule3_WhenProper_ShouldReturnTrue()
         {
@@ -152,7 +152,7 @@ namespace User_Registration_Test
         }
 
         [Test]
-        // Rule 4: Exacly 1 special character
+        // RULE 4: Exacly 1 special character
         // Test should return True if Password Rule 4 is proper
         public void givenPasswordRule4_WhenProper_ShouldReturnTrue()
         {
@@ -165,6 +165,14 @@ namespace User_Registration_Test
         public void givenPasswordRule4_WhenMoreThan1SpecialChars_ShouldReturnFalse()
         {
             bool result = userValidator.validatePassword("Pranav@996#Ige6!", userValidator.PASSWORD_PATTERN4);
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        // Test should return False if there is No special characters
+        public void givenPasswordRule4_WhenNoSpecialChars_ShouldReturnFalse()
+        {
+            bool result = userValidator.validatePassword("Pranav96Ige6", userValidator.PASSWORD_PATTERN4);
             Assert.IsFalse(result);
         }
     }
