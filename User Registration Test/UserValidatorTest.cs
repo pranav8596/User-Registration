@@ -143,5 +143,13 @@ namespace User_Registration_Test
             Assert.IsTrue(result);
         }
 
+        [Test]
+        // Test should return False if Password has no numeric number
+        public void givenPasswordRule3_WhenNoNumeric_ShouldReturnFalse()
+        {
+            bool result = userValidator.validatePassword("IamPranavIge", userValidator.PASSWORD_PATTERN3);
+            Assert.IsFalse(result);
+        }
+
     }
 }
