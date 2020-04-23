@@ -132,6 +132,16 @@ namespace User_Registration_Test
         {
             bool result = userValidator.validatePassword("pranavige", userValidator.PASSWORD_PATTERN2);
             Assert.IsFalse(result);
-        }       
+        }
+
+        [Test]
+        // Rule 3: Atleast one Numeric number
+        // Test should return True if Password Rule 3 is proper
+        public void givenPasswordRule3_WhenProper_ShouldReturnTrue()
+        {
+            bool result = userValidator.validatePassword("Pranav9Ige6", userValidator.PASSWORD_PATTERN3);
+            Assert.IsTrue(result);
+        }
+
     }
 }
