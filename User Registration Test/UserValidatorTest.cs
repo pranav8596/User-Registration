@@ -102,17 +102,17 @@ namespace User_Registration_Test
 
         [Test]
         //Test should return True if Password Rule 1 is proper
-        public void givenPassword_WhenProper_ShouldReturnTrue()
+        public void givenPasswordRule1_WhenProper_ShouldReturnTrue()
         {
-            bool result = userValidator.validatePassword("pranavige");
+            bool result = userValidator.validatePassword("pranavige", "^[a-z]{8,}$");
             Assert.IsTrue(result);
         }
 
         [Test]
         //Test should return False if Password contains One or more upper case
-        public void givenPassword_WhenUpperCase_ShouldReturnFalse()
+        public void givenPasswordRule1_WhenUpperCase_ShouldReturnFalse()
         {
-            bool result = userValidator.validatePassword("PranavIge");
+            bool result = userValidator.validatePassword("PranavIge", "^[a-z]{8,}$");
             Assert.IsFalse(result);
         }
     }
