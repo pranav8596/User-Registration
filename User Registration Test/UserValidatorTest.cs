@@ -17,7 +17,7 @@ namespace User_Registration_Test
         public void givenFirstName_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validateName("Pranav");
-            Assert.IsTrue(result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace User_Registration_Test
         public void givenFirstName_WhenImProper_ShouldReturnFalse()
         {
             bool result = userValidator.validateName("pranav");
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -33,7 +33,7 @@ namespace User_Registration_Test
         public void givenLastName_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validateName("Ige");
-            Assert.IsTrue(result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace User_Registration_Test
         public void givenLastName_WhenImProper_ShouldReturnFalse()
         {
             bool result = userValidator.validateName("ige");
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace User_Registration_Test
         public void givenEmailAddress_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validateEmail("pranav.ige96@gmail.com");
-            Assert.IsTrue(result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace User_Registration_Test
         public void givenEmailAddress_WhenNoAtSymbol_ShouldReturnFalse()
         {
             bool result = userValidator.validateEmail("pranav.ige96gmail.com");
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -65,7 +65,7 @@ namespace User_Registration_Test
         public void givenEmailAddress_WhenNoDomain_ShouldReturnFalse()
         {
             bool result = userValidator.validateEmail("pranav.ige96@.com");
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -73,7 +73,7 @@ namespace User_Registration_Test
         public void givenEmailAddress_WhenNoTLD_ShouldReturnFalse()
         {
             bool result = userValidator.validateEmail("pranav.ige96@gmail");
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -81,7 +81,7 @@ namespace User_Registration_Test
         public void givenMobileNumber_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validateMobileNumber("91 9167249096");
-            Assert.IsTrue(result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -89,7 +89,7 @@ namespace User_Registration_Test
         public void givenMobileNumber_WheNoSpace_ShouldReturnFalse()
         {
             bool result = userValidator.validateMobileNumber("919167249096");
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -97,7 +97,7 @@ namespace User_Registration_Test
         public void givenMobileNumber_WhenDigitsNotTen_ShouldReturnFalse()
         {
             bool result = userValidator.validateMobileNumber("91 916724");
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -106,7 +106,7 @@ namespace User_Registration_Test
         public void givenPasswordRule1_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validatePassword("pranavige", userValidator.PASSWORD_PATTERN1);
-            Assert.IsTrue(result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -114,7 +114,7 @@ namespace User_Registration_Test
         public void givenPasswordRule1_WhenUpperCase_ShouldReturnFalse()
         {
             bool result = userValidator.validatePassword("pra", userValidator.PASSWORD_PATTERN1);
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -123,7 +123,7 @@ namespace User_Registration_Test
         public void givenPasswordRule2_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validatePassword("PranavIge", userValidator.PASSWORD_PATTERN2);
-            Assert.IsTrue(result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -131,7 +131,7 @@ namespace User_Registration_Test
         public void givenPasswordRule2_WhenAllLowerCase_ShouldReturnFalse()
         {
             bool result = userValidator.validatePassword("pranavige", userValidator.PASSWORD_PATTERN2);
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -140,7 +140,7 @@ namespace User_Registration_Test
         public void givenPasswordRule3_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validatePassword("Pranav9Ige6", userValidator.PASSWORD_PATTERN3);
-            Assert.IsTrue(result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -148,7 +148,7 @@ namespace User_Registration_Test
         public void givenPasswordRule3_WhenNoNumeric_ShouldReturnFalse()
         {
             bool result = userValidator.validatePassword("IamPranavIge", userValidator.PASSWORD_PATTERN3);
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -157,7 +157,7 @@ namespace User_Registration_Test
         public void givenPasswordRule4_WhenProper_ShouldReturnTrue()
         {
             bool result = userValidator.validatePassword("Pranav996#Ige6", userValidator.PASSWORD_PATTERN4);
-            Assert.IsTrue(result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -165,7 +165,7 @@ namespace User_Registration_Test
         public void givenPasswordRule4_WhenMoreThan1SpecialChars_ShouldReturnFalse()
         {
             bool result = userValidator.validatePassword("Pranav@996#Ige6!", userValidator.PASSWORD_PATTERN4);
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
@@ -173,7 +173,7 @@ namespace User_Registration_Test
         public void givenPasswordRule4_WhenNoSpecialChars_ShouldReturnFalse()
         {
             bool result = userValidator.validatePassword("Pranav96Ige6", userValidator.PASSWORD_PATTERN4);
-            Assert.IsFalse(result);
+            Assert.AreEqual(false, result);
         }
     }
 }
