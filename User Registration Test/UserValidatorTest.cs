@@ -110,10 +110,10 @@ namespace User_Registration_Test
         }
 
         [Test]
-        //Test should return False if Password contains One or more upper case
+        //Test should return False if Password contains less than 8 characters
         public void givenPasswordRule1_WhenUpperCase_ShouldReturnFalse()
         {
-            bool result = userValidator.validatePassword("PranavIge", userValidator.PASSWORD_PATTERN1);
+            bool result = userValidator.validatePassword("pra", userValidator.PASSWORD_PATTERN1);
             Assert.IsFalse(result);
         }
 
@@ -124,6 +124,14 @@ namespace User_Registration_Test
         {
             bool result = userValidator.validatePassword("PranavIge", userValidator.PASSWORD_PATTERN2);
             Assert.IsTrue(result);
+        }
+
+        [Test]
+        // Test should return False if Password has all lower case chars
+        public void givenPasswordRule2_WhenAllLowerCase_ShouldReturnFalse()
+        {
+            bool result = userValidator.validatePassword("pranavige", userValidator.PASSWORD_PATTERN2);
+            Assert.IsFalse(result);
         }
 
 
