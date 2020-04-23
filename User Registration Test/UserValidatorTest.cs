@@ -159,5 +159,13 @@ namespace User_Registration_Test
             bool result = userValidator.validatePassword("Pranav996#Ige6", userValidator.PASSWORD_PATTERN4);
             Assert.IsTrue(result);
         }
+
+        [Test]
+        // Test should return False if it has more than 1 special characters
+        public void givenPasswordRule4_WhenMoreThan1SpecialChars_ShouldReturnFalse()
+        {
+            bool result = userValidator.validatePassword("Pranav@996#Ige6!", userValidator.PASSWORD_PATTERN4);
+            Assert.IsFalse(result);
+        }
     }
 }
