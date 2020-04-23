@@ -23,6 +23,9 @@ namespace User_Registration_Main
                                              "[ ]{1}" +
                                              "[0-9]{10}$";
 
+        //Pattern for Password Rule 1: Minimum 8 chracters
+        public const String PASSWORD_PATTERN = "^[a-z]{8,}$";
+
         //To validate User's Fisrt and Last name
         public Boolean validateName(String name)
         {
@@ -40,5 +43,12 @@ namespace User_Registration_Main
         {
             return Regex.IsMatch(mobNumber, MOBILE_PATTERN);
         }
+
+        //To validate User's Passowrd
+        public Boolean validatePassword(String password)
+        {
+            return Regex.IsMatch(password, PASSWORD_PATTERN);
+        }
+
     }
 }

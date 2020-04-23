@@ -99,5 +99,21 @@ namespace User_Registration_Test
             bool result = userValidator.validateMobileNumber("91 916724");
             Assert.IsFalse(result);
         }
+
+        [Test]
+        //Test should return True if Password Rule 1 is proper
+        public void givenPassword_WhenProper_ShouldReturnTrue()
+        {
+            bool result = userValidator.validatePassword("pranavige");
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        //Test should return False if Password contains One or more upper case
+        public void givenPassword_WhenUpperCase_ShouldReturnFalse()
+        {
+            bool result = userValidator.validatePassword("PranavIge");
+            Assert.IsFalse(result);
+        }
     }
 }
