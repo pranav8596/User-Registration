@@ -151,5 +151,13 @@ namespace User_Registration_Test
             Assert.IsFalse(result);
         }
 
+        [Test]
+        // Rule 4: Exacly 1 special character
+        // Test should return True if Password Rule 4 is proper
+        public void givenPasswordRule4_WhenProper_ShouldReturnTrue()
+        {
+            bool result = userValidator.validatePassword("Pranav996#Ige6", userValidator.PASSWORD_PATTERN4);
+            Assert.IsTrue(result);
+        }
     }
 }
