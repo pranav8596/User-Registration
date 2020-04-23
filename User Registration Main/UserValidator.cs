@@ -24,10 +24,12 @@ namespace User_Registration_Main
                                              "[0-9]{10}$";
 
         //Pattern for Password Rule 1: Minimum 8 chracters
-        public const String PASSWORD_PATTERN1 = "^[a-z]{8,}$";
+        public String PASSWORD_PATTERN1 = "^[a-z]{8,}$";
 
         //Pattern for Password Rule 2: At least 1 upper case
-        public const String PASSWORD_PATTERN2 = "^(?=.*[A-Z]).[A-Za-z]{7,}$";
+        public String PASSWORD_PATTERN2 = "^(?=.*[A-Z]).[A-Za-z]{7,}$";
+
+
 
         //To validate User's Fisrt and Last name
         public Boolean validateName(String name)

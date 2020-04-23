@@ -101,10 +101,11 @@ namespace User_Registration_Test
         }
 
         [Test]
-        //Test should return True if Password Rule 1 is proper
+        // Rule 1: Minimum 8 characters
+        // Test should return True if Password Rule 1 is proper
         public void givenPasswordRule1_WhenProper_ShouldReturnTrue()
         {
-            bool result = userValidator.validatePassword("pranavige", "^[a-z]{8,}$");
+            bool result = userValidator.validatePassword("pranavige", userValidator.PASSWORD_PATTERN1);
             Assert.IsTrue(result);
         }
 
@@ -112,8 +113,19 @@ namespace User_Registration_Test
         //Test should return False if Password contains One or more upper case
         public void givenPasswordRule1_WhenUpperCase_ShouldReturnFalse()
         {
-            bool result = userValidator.validatePassword("PranavIge", "^[a-z]{8,}$");
+            bool result = userValidator.validatePassword("PranavIge", userValidator.PASSWORD_PATTERN1);
             Assert.IsFalse(result);
         }
+
+        [Test]
+        // Rule 2: Atleast one upper case
+        // Test should return True if Password Rule 2 is proper
+        public void givenPasswordRule2_WhenProper_ShouldReturnTrue()
+        {
+            bool result = userValidator.validatePassword("PranavIge", userValidator.PASSWORD_PATTERN2);
+            Assert.IsTrue(result);
+        }
+
+
     }
 }
